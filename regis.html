@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>Int Conference</title>
+    <style type="text/css">
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            z-index: -100;
+
+            background-image: url('media/bg.jpg');
+            opacity: 0.2;
+        }
+
+        img {
+            width: 52px;
+            height: 52px;
+            float: left;
+
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: center;
+        }
+
+        a {
+            font-size: 18px;
+            padding: 2px;
+            margin: 2px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        a {
+            background-color: lightsalmon;
+            padding: 8px;
+            margin: 8px;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="media/logo.png">
+    <h1>International Conference</h1>
+    <hr>
+    <hr><br>
+    <tr>
+        <th><a target="_blank" title="Home" href="home.html">Home</a></th>
+        <th><a target="_blank" title="Committee" href="com.html">Committee</a></th>
+        <th><a target="_blank" title="Call for Papers" href="cop.html">Call for Papers</a></th>
+        <th><a target="_blank" title="Important Dates" href="impdates.html">Important Dates</a></th>
+        <th><a target="_blank" title="Workshops" href="work.html">Workshops</a></th>
+        <th><a target="_blank" title="Registration" href="regis.html">Registration</a></th>
+        <th><a target="_blank" title="Contact" href="contact.html">Contact</a></th>
+    </tr>
+
+    <br>
+    <hr>
+    <hr>
+    <h2>Registration</h2>
+    <p>Register as a student/teacher in the form below:</p>
+    <br>
+    <form>
+        <label for="name">Your name:</label><br>
+        <input type="text" id="name" name="name" value=""><br>
+
+        <input type="radio" id="student" name="prof" value="Student">
+        <label for="student">Student</label><br>
+        <input type="radio" id="teacher" name="prof" value="Teacher">
+        <label for="teacher">Teacher</label><br>
+
+        <input type="checkbox" id="is_old" name="is_old" value="isOld">
+        <label for="is_old">I have attended last year's conference</label><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+</html>
