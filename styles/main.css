@@ -1,0 +1,49 @@
+body::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: -100;
+
+    background-image: url('../media/bg.jpg');
+    opacity: 0.1;
+}
+
+img {
+    width: 52px;
+    height: 52px;
+    float: left;
+}
+
+nav {
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+}
+
+a {
+    font-size: 18px;
+    padding: 2px;
+    margin: 2px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 16px;
+}
+
+a {
+    background-color: lightsalmon;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 16px;
+}
