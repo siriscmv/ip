@@ -2,26 +2,6 @@
 
 <head>
   <title>Int Conference</title>
-  <link rel="stylesheet" href="styles/main.css" />
-  <style>
-    input[type=text],
-    input[type=email] {
-      background-color: var(--white);
-      border: 4px solid var(--secondary);
-      border-radius: 4px;
-      padding: 6px;
-      margin: 6px;
-    }
-
-    input[type=submit] {
-      background-color: var(--secondary);
-      border: 4px solid var(--secondary);
-      border-radius: 4px;
-      padding: 6px;
-      margin: 6px;
-      color: var(--white);
-    }
-  </style>
 </head>
 
 <body>
@@ -48,28 +28,19 @@
       <span class="big-text">Register as a student/teacher in the form below:</span>
       <div class="content">
         <form>
-          <fieldset>
-            <label for="name">Enter your name:</label><br />
-            <input type="text" id="name" name="name" value="" required /><br />
+          <label for="name">Enter your name:</label><br />
+          <input type="text" id="name" name="name" value="" required /><br />
 
-            <label for="email">Enter your email:</label><br />
-            <input type="email" id="email" name="email"><br />
+          <label for="prof">I am a:</label><br />
+          <input type="radio" id="student" name="prof" value="Student" />
+          <label for="student">Student</label><br />
+          <input type="radio" id="teacher" name="prof" value="Teacher" />
+          <label for="teacher">Teacher</label><br />
 
-            <label for="phone">Enter your phone number: (10 digits)</label><br />
-            <input type="text" id="phone" phone="name" pattern="[0-9]{10}" /><br />
-          </fieldset>
-          <fieldset>
-            <label for="prof">I am a:</label><br />
-            <input type="radio" id="student" name="prof" value="Student" />
-            <label for="student">Student</label><br />
-            <input type="radio" id="teacher" name="prof" value="Teacher" />
-            <label for="teacher">Teacher</label><br />
+          <input type="checkbox" id="is_old" name="is_old" value="isOld" />
+          <label for="is_old">I have attended last year's conference</label><br />
 
-            <input type="checkbox" id="is_old" name="is_old" value="isOld" />
-            <label for="is_old">I have attended last year's conference</label><br />
-
-            <input type="submit" value="Submit" />
-          </fieldset>
+          <input type="submit" value="Submit" />
         </form>
       </div>
   </div>
