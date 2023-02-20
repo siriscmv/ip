@@ -40,10 +40,15 @@ a {
   font-size: 18px;
   padding: 2px;
   margin: 2px;
+  color: var(--secondary);
 }
 
 a:visited {
-  color: var(--light);
+  color: var(--secondary);
+}
+
+.nav-element:hover {
+  background-color: var(--tertiary);
 }
 
 p {
@@ -66,10 +71,6 @@ nav > div {
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
-}
-
-.nav-element:hover {
-  background-color: var(--secondary);
 }
 
 .main-body {
