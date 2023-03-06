@@ -8,7 +8,21 @@
     input[type=email],
     input[type=datalist],
     input[type=date],
-    input[type=password] {
+    input[type=password],
+    textarea {
+      background-color: var(--white);
+      border: 4px solid var(--white);
+      border-radius: 4px;
+      padding: 6px;
+      margin: 6px;
+    }
+
+    input[type=text]:focus,
+    input[type=email]:focus,
+    input[type=datalist]:focus,
+    input[type=date]:focus,
+    input[type=password]:focus,
+    textarea:focus {
       background-color: var(--white);
       border: 4px solid var(--secondary);
       border-radius: 4px;
@@ -17,7 +31,8 @@
     }
 
     input[type=submit],
-    input[type=reset] {
+    input[type=reset],
+    input[type=file] {
       background-color: var(--secondary);
       border: 4px solid var(--secondary);
       border-radius: 4px;
@@ -79,10 +94,10 @@
             <label for="dr">Dr</label><br />
 
             <label for="name">Enter your name:</label><br />
-            <input type="text" id="name" name="name" value="" required /><br />
+            <input required type="text" id="name" name="name" /><br />
 
             <label for="username">Enter your username:</label><br />
-            <input type="datalist" list="usernames" name="username" id="username">
+            <input required type="datalist" list="usernames" name="username" id="username">
             <datalist id="usernames">
               <option value="shipwreckconstant">
               <option value="rotantique">
@@ -288,40 +303,42 @@
           </fieldset>
           <fieldset>
             <label for="password">Enter your password:</label><br />
-            <input type="password" id="password" name="password"><br />
+            <input required type="password" id="password" name="password"><br />
 
             <label for="email">Enter your email:</label><br />
-            <input type="email" id="email" name="email"><br />
+            <input required type="email" id="email" name="email"><br />
           </fieldset>
           <fieldset>
             <label for="dob">Enter your DOB</label><br />
-            <input type="date" id="dob" /><br />
+            <input required type="date" id="dob" name="dob" /><br />
 
             <label for="photo">Upload your photo</label><br />
-            <input type="file" accept=".png,.jpg,.jpeg,.gif,.webp" id="photo" /><br />
+            <input required type="file" accept=".png,.jpg,.jpeg,.gif,.webp" id="photo" name="photo" /><br />
           </fieldset>
           <fieldset>
             <label for="langauges">Languages known</label><br />
-            <input type="checkbox" id="english" name="english" value="english">
+            <input type="checkbox" id="english" name="langauges" value="english">
             <label for="english">English</label>
-            <input type="checkbox" id="tamil" name="tamil" value="tamil">
+            <input type="checkbox" id="tamil" name="langauges" value="tamil">
             <label for="tamil">Tamil</label>
-            <input type="checkbox" id="french" name="french" value="french">
+            <input type="checkbox" id="french" name="langauges" value="french">
             <label for="french">French</label>
-            <input type="checkbox" id="others" name="others" value="others">
+            <input type="checkbox" id="others" name="langauges" value="others">
             <label for="others">Others</label>
 
             <br><label for="expertise">Additional Expertise:</label><br>
-            <textarea id="expertise" name="expertise"></textarea>
+            <textarea placeholder="Enter your expertise here" id="expertise" name="expertise"></textarea>
           </fieldset>
           <fieldset>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Clear">
+            <input required type="submit" value="Submit">
+            <input required type="reset" value="Clear">
           </fieldset>
         </form>
       </div>
   </div>
   </div>
+
+  <script src="./scripts/regis.js"></script>
 
 </body>
 
