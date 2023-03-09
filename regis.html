@@ -52,6 +52,19 @@
       color: var(--secondary);
       cursor: pointer;
     }
+
+    .form-field-parent {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .red {
+      color: red;
+    }
   </style>
 </head>
 
@@ -80,6 +93,8 @@
 
     <main class="main-body">
       <span class="big-text">Register as a student/teacher in the form below:</span>
+      <br>
+      <span>Use enter key to go to the next field</span>
       <div class="content">
         <form>
           <fieldset>
@@ -94,10 +109,17 @@
             <label for="dr">Dr</label><br />
 
             <label for="name">Enter your name:</label><br />
-            <input required type="text" id="name" name="name" /><br />
+            <div class="form-field-parent">
+              <input autocomplete required type="text" id="name" name="name" />
+              <span id="namehelper"></span>
+            </div>
 
             <label for="username">Enter your username:</label><br />
-            <input required type="datalist" list="usernames" name="username" id="username">
+            <div class="form-field-parent">
+              <input autocomplete required type="datalist" list="usernames" name="username" id="username">
+              <span id="usernamehelper"></span>
+            </div>
+
             <datalist id="usernames">
               <option value="shipwreckconstant">
               <option value="rotantique">
@@ -303,14 +325,24 @@
           </fieldset>
           <fieldset>
             <label for="password">Enter your password:</label><br />
-            <input required type="password" id="password" name="password"><br />
+            <div class="form-field-parent">
+              <input required type="password" id="password" name="password">
+              <span id="passwordhelper"></span>
+            </div>
 
             <label for="email">Enter your email:</label><br />
-            <input required type="email" id="email" name="email"><br />
+            <div class="form-field-parent">
+              <input autocomplete required type="email" id="email" name="email">
+              <span id="emailhelper"></span>
+            </div>
           </fieldset>
           <fieldset>
             <label for="dob">Enter your DOB</label><br />
-            <input required type="date" id="dob" name="dob" /><br />
+
+            <div class="form-field-parent">
+              <input min="1950-01-01" max="2020-01-01" required type="date" id="dob" name="dob" />
+              <span id="dobhelper"></span>
+            </div>
 
             <label for="photo">Upload your photo</label><br />
             <input required type="file" accept=".png,.jpg,.jpeg,.gif,.webp" id="photo" name="photo" /><br />
@@ -330,8 +362,8 @@
             <textarea placeholder="Enter your expertise here" id="expertise" name="expertise"></textarea>
           </fieldset>
           <fieldset>
-            <input required type="submit" value="Submit">
-            <input required type="reset" value="Clear">
+            <input id="submit" type="submit" value="Submit">
+            <input id="reset" type="reset" value="Clear">
           </fieldset>
         </form>
       </div>
