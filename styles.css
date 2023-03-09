@@ -1,0 +1,25 @@
+:root {
+	--dark: #181818;
+	--light: #edf2f4;
+	--danger: #ef233c;
+	--success: #3cef25;
+	--primary: #253cef;
+}
+
+body {
+	background-color: var(--dark);
+	color: var(--light);
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+body > div {
+	display: flex;
+	flex-direction: column;
+}
+
+.big-text {
+}
