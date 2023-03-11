@@ -3,6 +3,8 @@ const SYMBOLS = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '+'];
 
 const level = parseInt(window.location.search.match(/level=(\d)/)?.[1]);
 
+document.getElementsByClassName('info')[0].children[0].innerText += ` (level ${level})`;
+
 const shuffleArray = (array) => {
     let currentIndex = array.length,  randomIndex;
   
