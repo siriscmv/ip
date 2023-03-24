@@ -1,0 +1,12 @@
+version: '3'
+services:
+  api:
+    image: webapp
+    restart: always
+    container_name: mywebapp
+    build:
+      context: ./src
+    volumes:
+      - ./src/ip-lab:/usr/local/tomcat/webapps/ip-lab
+    ports:
+      - '80:8080'
