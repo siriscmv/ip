@@ -1,7 +1,7 @@
 FROM tomcat:9.0
 COPY . /usr/local/tomcat/webapps/
 
-RUN ["javac", "-cp", "/usr/local/tomcat/lib/servlet-api.jar", "-d", "/usr/local/tomcat/webapps/ip-lab/WEB-INF/classes/", "/usr/local/tomcat/webapps/ip-lab/src/FormServlet.java"]
+RUN ["javac", "-cp", "/usr/local/tomcat/lib/servlet-api.jar", "-d", "/usr/local/tomcat/webapps/ip-lab/WEB-INF/classes/", "/usr/local/tomcat/webapps/ip-lab/WEB-INF/src/FormServlet.java"]
 COPY ./ip-lab/WEB-INF/classes/* /usr/local/tomcat/webapps/ip-lab/WEB-INF/classes/.
 
 EXPOSE 8080
