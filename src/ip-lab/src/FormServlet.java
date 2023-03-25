@@ -10,7 +10,7 @@ public class FormServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
         
-        String message="<H1>" + "Dynamically rendered on the fly!" + "</H1>" ;
+        String message="<h1>" + "Dynamically rendered on the fly!" + "</h1>" ;
         writer.println(message);
     }
 }

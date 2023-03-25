@@ -1,9 +1,9 @@
 version: '3'
 services:
-  api:
-    image: webapp
+  tomcat:
+    image: tomcat
     restart: always
-    container_name: mywebapp
+    container_name: tomcat
     build:
       context: ./src
     volumes:

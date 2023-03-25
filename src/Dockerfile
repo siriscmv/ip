@@ -1,11 +1,8 @@
-# Install Tomcat & openjdk 8 (openjdk has java and javac)
-FROM tomcat:jdk8-openjdk
-# Copy source files to tomcat folder structure
+FROM tomcat:9.0
 COPY . /usr/local/tomcat/webapps/
-# -cp, Adding compile time classpath as Tomcat's /lib/servlet-api.jar file.
-# - d, destination output location.
-RUN ["javac", "-cp", ".:/usr/local/tomcat/lib/servlet-api.jar", "-d", "/usr/local/tomcat/webapps/ip-lab/WEB-INF/classes/", "/usr/local/tomcat/webapps/ip-lab/src/FormServlet.java"]
 
-# Serve Tomcat
+RUN ["javac", "-cp", "/usr/local/tomcat/lib/servlet-api.jar", "-d", "/usr/local/tomcat/webapps/ip-lab/WEB-INF/classes/", "/usr/local/tomcat/webapps/ip-lab/src/FormServlet.java"]
+COPY ./ip-lab/WEB-INF/classes/* /usr/local/tomcat/webapps/ip-lab/WEB-INF/classes/.
+
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
