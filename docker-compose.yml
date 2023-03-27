@@ -8,6 +8,8 @@ services:
       context: ./src
     ports:
       - '80:8080'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   mysql:
     image: mysql:8
     container_name: mysql
@@ -20,14 +22,3 @@ services:
       MYSQL_PASSWORD: test
     volumes:
       - ./mysql-db:/var/lib/mysql
-    networks:
-      network:
-        ipv4_address: 10.5.0.5
-
-networks:
-  network:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.5.0.0/16
-          gateway: 10.5.0.1

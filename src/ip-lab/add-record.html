@@ -1,18 +1,19 @@
 <html>
 
 <head>
-  <title>Login page</title>
+  <title>Add record</title>
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/form.css" />
 </head>
 
 <body>
   <div>
-    <h2 class="text-center sec">Admin Login</h2>
+    <h2 class="text-center sec">Add record</h2>
+
     <main class="main-body">
       <div class="content">
-        <form action="/ip-lab/api/login" method="post">
-          <fieldset>
+        <form action="/ip-lab/api/record" method="post">
+          <fieldset> //TODO: Edit this to include all fields of the table
             <label for="username">Enter your username:</label><br />
             <input required type="text" name="username" id="username">
             <br />

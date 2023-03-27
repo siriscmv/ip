@@ -1,20 +1,18 @@
 <web-app>
-<servlet>
- <servlet-name>Login</servlet-name>
- <servlet-class>Login</servlet-class>
-</servlet>
-<servlet-mapping>
- <servlet-name>Login</servlet-name>
- <url-pattern>/api/login</url-pattern>
-</servlet-mapping>
-
-<servlet>
- <servlet-name>DB</servlet-name>
- <servlet-class>DB</servlet-class>
-</servlet>
-<servlet-mapping>
- <servlet-name>DB</servlet-name>
- <url-pattern>/test</url-pattern>
-</servlet-mapping>
-
+   <servlet>
+      <servlet-name>Login</servlet-name>
+      <servlet-class>Login</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>Login</servlet-name>
+      <url-pattern>/api/login</url-pattern>
+   </servlet-mapping>
+   <servlet>
+      <servlet-name>Record</servlet-name>
+      <servlet-class>Record</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>Record</servlet-name>
+      <url-pattern>/api/record</url-pattern>
+   </servlet-mapping>
 </web-app>
