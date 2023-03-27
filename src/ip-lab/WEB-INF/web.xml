@@ -1,10 +1,10 @@
 <web-app>
 <servlet>
- <servlet-name>FormServlet</servlet-name>
- <servlet-class>FormServlet</servlet-class>
+ <servlet-name>Login</servlet-name>
+ <servlet-class>Login</servlet-class>
 </servlet>
 <servlet-mapping>
- <servlet-name>FormServlet</servlet-name>
- <url-pattern>/handle-form</url-pattern>
+ <servlet-name>Login</servlet-name>
+ <url-pattern>/api/login</url-pattern>
 </servlet-mapping>
 </web-app>
