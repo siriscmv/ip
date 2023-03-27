@@ -9,3 +9,6 @@ CREATE TABLE patient_details (
     disease_name VARCHAR(255) NOT NULL,
     PRIMARY KEY (ID)
 );
+
+
+INSERT INTO Employees VALUES (100, 18, 'Zara', 'Ali');
