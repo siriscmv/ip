@@ -12,7 +12,7 @@ public class DB extends HttpServlet{
    
       // JDBC driver name and database URL
        String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-       String DB_URL="jdbc:mysql://172.18.0.3/test";
+       String DB_URL="jdbc:mysql://10.5.0.5:3306/test";
 
       //  Database credentials
        String USER = "test";
@@ -46,6 +46,7 @@ public class DB extends HttpServlet{
 
          // Extract data from result set
          while(rs.next()){
+            System.out.println("ID: " + rs.getInt("id"));
             //Retrieve by column name
             int id  = rs.getInt("id");
             int age = rs.getInt("age");
