@@ -15,4 +15,12 @@
       <servlet-name>Record</servlet-name>
       <url-pattern>/api/record</url-pattern>
    </servlet-mapping>
+   <servlet>
+      <servlet-name>ListRecords</servlet-name>
+      <servlet-class>ListRecords</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>ListRecords</servlet-name>
+      <url-pattern>/list-records</url-pattern>
+   </servlet-mapping>
 </web-app>
