@@ -16,7 +16,7 @@
   </div>
 
   <script>
-    document.onload = () => {
+    window.onload = () => {
       const urlParams = new URLSearchParams(window.location.search);
       document.getElementById('msg').innerHTML = urlParams.get('msg');
     }
