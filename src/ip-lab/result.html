@@ -1,14 +1,14 @@
 <html>
 
 <head>
-  <title>Success</title>
+  <title>Result</title>
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 
 <body>
 
   <div>
-    <h2 id="msg" class="text-center sec">Success</h2>
+    <h3 id="msg" class="text-center sec"></h3>
     <main class="main-body">
       <button>View</button>//TODO: Redirct this to "list all records" page
     </main>
@@ -18,8 +18,7 @@
   <script>
     document.onload = () => {
       const urlParams = new URLSearchParams(window.location.search);
-      const message = urlParams.get('msg');
-      document.getElementById('msg').innerHTML = message;
+      document.getElementById('msg').innerHTML = urlParams.get('msg');
     }
   </script>
 </body>

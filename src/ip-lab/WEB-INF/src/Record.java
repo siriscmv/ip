@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.io.PrintWriter;  
 import java.util.Enumeration;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -24,16 +25,16 @@ public class Record extends HttpServlet {
     int id = Integer.parseInt(request.getParameter("id"));
     String gender = request.getParameter("gender");
     String address = request.getParameter("address");
-    bool marital_status = request.getParameter("marital_status").equals("true");
-    Date dov = new SimpleDateFormat("yyyy-MM-dd").format(request.getParameter("date_of_visit"));
+    boolean marital_status = request.getParameter("marital_status").equals("true");
+    java.sql.Date dov = java.sql.Date.valueOf(request.getParameter("date_of_visit"));
     String disease = request.getParameter("disease_name");
 
     this.add_record(name, age, id, gender, address, marital_status, dov, disease);
 
-    response.sendRedirect("/ip-lab/success.html?msg=Record+added+successfully");
+    response.sendRedirect("/ip-lab/result.html?msg=Record+added+successfully");
   }
 
-  public bool check_auth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+  public boolean check_auth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     Cookie[] cookies = request.getCookies();
     
     for (Cookie cookie : cookies) {
@@ -50,7 +51,7 @@ public class Record extends HttpServlet {
     return false;
   }
 
-  public void add_record(String name, int age, int id, String gender, String address, bool marital_status, Date dov, String disease) {
+  public void add_record(String name, int age, int id, String gender, String address, boolean marital_status, java.sql.Date dov, String disease) {
     try {
       Class.forName("com.mysql.jdbc.Driver");
       Connection con = DriverManager.getConnection("jdbc:mysql://host.docker.internal:3306/test", "test", "test");
@@ -69,7 +70,7 @@ public class Record extends HttpServlet {
 
       con.close();
     } catch (Exception e) {
-      e.printStacktrace();
+      e.printStackTrace();
     }
   }
 }

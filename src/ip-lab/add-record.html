@@ -13,12 +13,36 @@
     <main class="main-body">
       <div class="content">
         <form action="/ip-lab/api/record" method="post">
-          <fieldset> //TODO: Edit this to include all fields of the table
-            <label for="username">Enter your username:</label><br />
-            <input required type="text" name="username" id="username">
+          <fieldset>
+            <label for="name">Enter the name:</label><br />
+            <input required type="text" name="name" id="name">
             <br />
-            <label for="password">Enter your password:</label><br />
-            <input required type="password" name="password" id="password">
+            <label for="age">Enter the age:</label><br />
+            <input required type="number" name="age" id="age">
+            <br />
+            <label for="id">Enter the ID:</label><br />
+            <input required type="number" name="id" id="id">
+            <br />
+            <label for="gender">Enter the gender:</label><br />
+            <input type="radio" id="m" name="gender" value="M">
+            <label for="m">Male</label><br />
+            <input type="radio" id="f" name="gender" value="F">
+            <label for="f">Female</label><br />
+            <br />
+            <label for="address">Enter the address:</label><br />
+            <input required type="text" name="address" id="address">
+            <br />
+            <label for="marital_status">Enter the marital status:</label><br />
+            <input type="radio" id="my" name="marital_status" value="true">
+            <label for="my">Married</label><br />
+            <input type="radio" id="mn" name="marital_status" value="false">
+            <label for="mn">Not married</label><br />
+            <br />
+            <label for="date_of_visit">Enter the Date of visit:</label><br />
+            <input required type="date" name="date_of_visit" id="date_of_visit">
+            <br />
+            <label for="disease_name">Enter the disease:</label><br />
+            <input required type="text" name="disease_name" id="disease_name">
             <br />
             <input type="submit" value="submit">
             <input type="reset" value="clear">
