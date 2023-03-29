@@ -30,7 +30,7 @@ public class ListRecords extends HttpServlet {
       PrintWriter writer = response.getWriter();
 
       writer.println("<html><head><title>Records</title><link rel=\"stylesheet\" href=\"styles/form-table.css\" /></head>");
-      writer.println("<body><table><tr><th>Id</th><th>Name</th><th>Age</th><th>Gender</th><th>Address</th><th>Martial status</th><th>Date of visit</th>Disease Name</tr>");
+      writer.println("<body><h1>All records</h1><table><tr><th>Id</th><th>Name</th><th>Age</th><th>Gender</th><th>Address</th><th>Martial status</th><th>Date of visit</th><th>Disease Name</th></tr>");
 
       while (rs.next()) {
         writer.println("<tr>");
@@ -39,6 +39,12 @@ public class ListRecords extends HttpServlet {
         writer.println("<td>" + rs.getInt("age") + "</td>");
         writer.println("<td>" + rs.getString("gender") + "</td>");
         writer.println("<td>" + rs.getString("address") + "</td>");
+        boolean marital_status = rs.getBoolean("marital_status");
+        if (marital_status) {
+          writer.println("<td>Yes</td>");
+        } else {
+          writer.println("<td>No</td>");
+        }
         writer.println("<td>" + rs.getDate("date_of_visit").toString() + "</td>");
         writer.println("<td>" + rs.getString("disease_name") + "</td>");
         writer.println("</tr>");
