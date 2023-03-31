@@ -13,67 +13,67 @@ import javax.servlet.http.Cookie;
 import java.sql.*;
 
 public class ListRecords extends HttpServlet {
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    response.setContentType("text/html");
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
 
-    if (!this.check_auth(request, response)) {
-      return;
-    }
-
-    try {
-
-      Class.forName("com.mysql.jdbc.Driver");
-      Connection con = DriverManager.getConnection("jdbc:mysql://host.docker.internal:3306/test", "test", "test");
-
-      Statement stmt = con.createStatement();
-      ResultSet rs = stmt.executeQuery("SELECT * FROM patient_details");
-      PrintWriter writer = response.getWriter();
-
-      writer.println("<html><head><title>Records</title><link rel=\"stylesheet\" href=\"/ip-lab/styles/form-table.css\" /></head>");
-      writer.println("<body><h1>All records</h1><table><tr><th>Id</th><th>Name</th><th>Age</th><th>Gender</th><th>Address</th><th>Martial status</th><th>Date of visit</th><th>Disease Name</th></tr>");
-
-      while (rs.next()) {
-        writer.println("<tr>");
-        writer.println("<td>" + rs.getInt("ID") + "</td>");
-        writer.println("<td>" + rs.getString("name") + "</td>");
-        writer.println("<td>" + rs.getInt("age") + "</td>");
-        writer.println("<td>" + rs.getString("gender") + "</td>");
-        writer.println("<td>" + rs.getString("address") + "</td>");
-        boolean marital_status = rs.getBoolean("marital_status");
-        if (marital_status) {
-          writer.println("<td>Yes</td>");
-        } else {
-          writer.println("<td>No</td>");
+        if (!this.check_auth(request, response)) {
+            return;
         }
-        writer.println("<td>" + rs.getDate("date_of_visit").toString() + "</td>");
-        writer.println("<td>" + rs.getString("disease_name") + "</td>");
-        writer.println("</tr>");
-      }
 
-      writer.println("</table><a href=\"/ip-lab/homepage.html\">Go Back</a></body></html>");
-      rs.close();
+        try {
 
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://host.docker.internal:3306/test", "test", "test");
 
-  public boolean check_auth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    Cookie[] cookies = request.getCookies();
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM patient_details");
+            PrintWriter writer = response.getWriter();
 
-    if (cookies != null) {
-      for (Cookie cookie: cookies) {
-      if (cookie.getName().equals("auth")) {
-        if (cookie.getValue().equals("fed290e7355f56b1bee7717e9b58b92c7f39d98cb709d2322dca50327555a291")) {
-          return true;
+            writer.println("<html><head><title>Records</title><link rel=\"stylesheet\" href=\"/ip-lab/styles/form-table.css\" /></head>");
+            writer.println("<body><h1>All records</h1><table><tr><th>Id</th><th>Name</th><th>Age</th><th>Gender</th><th>Address</th><th>Martial status</th><th>Date of visit</th><th>Disease Name</th></tr>");
+
+            while (rs.next()) {
+                writer.println("<tr>");
+                writer.println("<td>" + rs.getInt("ID") + "</td>");
+                writer.println("<td>" + rs.getString("name") + "</td>");
+                writer.println("<td>" + rs.getInt("age") + "</td>");
+                writer.println("<td>" + rs.getString("gender") + "</td>");
+                writer.println("<td>" + rs.getString("address") + "</td>");
+                boolean marital_status = rs.getBoolean("marital_status");
+                if (marital_status) {
+                    writer.println("<td>Yes</td>");
+                } else {
+                    writer.println("<td>No</td>");
+                }
+                writer.println("<td>" + rs.getDate("date_of_visit").toString() + "</td>");
+                writer.println("<td>" + rs.getString("disease_name") + "</td>");
+                writer.println("</tr>");
+            }
+
+            writer.println("</table><a href=\"/ip-lab/homepage.html\">Go Back</a></body></html>");
+            rs.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-      }
-    }
     }
 
-    PrintWriter writer = response.getWriter();
-    writer.println("<html><body><h1>Invalid username or password</h1></body></html>");
+    public boolean check_auth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Cookie[] cookies = request.getCookies();
 
-    return false;
-  }
+        if (cookies != null) {
+            for (Cookie cookie: cookies) {
+                if (cookie.getName().equals("auth")) {
+                    if (cookie.getValue().equals("fed290e7355f56b1bee7717e9b58b92c7f39d98cb709d2322dca50327555a291")) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        PrintWriter writer = response.getWriter();
+        writer.println("<html><body><h1>Invalid username or password</h1></body></html>");
+
+        return false;
+    }
 }
