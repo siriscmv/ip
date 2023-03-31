@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Delete record</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/form.css" />
+  </head>
+
+  <body>
+    <div>
+      <h2 class="text-center sec">Delete record</h2>
+
+      <main class="main-body">
+        <div class="content">
+          <form action="/ip-lab/api/delete-record" method="post">
+            <fieldset>
+              <label for="id">Enter the ID:</label><br />
+              <input required type="number" name="id" id="id" />
+              <br />
+              <input type="submit" value="Submit" />
+              <input type="reset" value="Clear" />
+            </fieldset>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
