@@ -1,5 +1,5 @@
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.PrintWriter;  
 import java.util.Enumeration;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -12,27 +12,34 @@ import javax.servlet.http.Cookie;
 
 import java.sql.*;
 
-public class ListRecords extends HttpServlet {
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class SearchRecord extends HttpServlet {
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     response.setContentType("text/html");
 
     if (!this.check_auth(request, response)) {
       return;
     }
 
+    int id = Integer.parseInt(request.getParameter("id"));
     try {
 
       Class.forName("com.mysql.jdbc.Driver");
       Connection con = DriverManager.getConnection("jdbc:mysql://host.docker.internal:3306/test", "test", "test");
 
-      Statement stmt = con.createStatement();
-      ResultSet rs = stmt.executeQuery("SELECT * FROM patient_details");
-      PrintWriter writer = response.getWriter();
+      PreparedStatement pst = con.prepareStatement("SELECT * FROM patient_details WHERE ID = ?");
+      pst.setInt(1, id);
 
-      writer.println("<html><head><title>Records</title><link rel=\"stylesheet\" href=\"/ip-lab/styles/form-table.css\" /></head>");
-      writer.println("<body><h1>All records</h1><table><tr><th>Id</th><th>Name</th><th>Age</th><th>Gender</th><th>Address</th><th>Martial status</th><th>Date of visit</th><th>Disease Name</th></tr>");
+      ResultSet rs = pst.executeQuery();
 
-      while (rs.next()) {
+    PrintWriter writer = response.getWriter();
+    writer.println("<html><head><title>Search Result</title><link rel=\"stylesheet\" href=\"/ip-lab/styles/form-table.css\" /></head>");
+    writer.println("<body><h1>Search Result</h1><table><tr><th>Id</th><th>Name</th><th>Age</th><th>Gender</th><th>Address</th><th>Martial status</th><th>Date of visit</th><th>Disease Name</th></tr>");
+
+    boolean found = false;
+
+    while (rs.next()) {
+        found = true;
+        
         writer.println("<tr>");
         writer.println("<td>" + rs.getInt("ID") + "</td>");
         writer.println("<td>" + rs.getString("name") + "</td>");
@@ -50,9 +57,15 @@ public class ListRecords extends HttpServlet {
         writer.println("</tr>");
       }
 
-      writer.println("</table><a href=\"/ip-lab/homepage.html\">Go Back</a></body></html>");
-      rs.close();
 
+      if (found) {
+        writer.println("</table><a href=\"/ip-lab/homepage.html\">Go Back</a></body></html>");
+      } else {
+        writer.println("<tr><td colspan=\"8\">No records found</td></tr>");
+      }
+      
+      rs.close();
+          con.close();
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -60,7 +73,7 @@ public class ListRecords extends HttpServlet {
 
   public boolean check_auth(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     Cookie[] cookies = request.getCookies();
-
+    
     if (cookies != null) {
       for (Cookie cookie: cookies) {
       if (cookie.getName().equals("auth")) {

@@ -1,26 +1,22 @@
 <html>
+  <head>
+    <title>Result</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
 
-<head>
-  <title>Result</title>
-  <link rel="stylesheet" href="styles/main.css" />
-</head>
+  <body>
+    <div>
+      <h3 id="msg" class="text-center sec"></h3>
+      <main class="main-body">
+        <a href="/ip-lab/list-records">View</a>
+      </main>
+    </div>
 
-<body>
-
-  <div>
-    <h3 id="msg" class="text-center sec"></h3>
-    <main class="main-body">
-      <a href="/ip-lab/list-records">View</a>
-    </main>
-  </div>
-  </div>
-
-  <script>
-    window.onload = () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      document.getElementById('msg').innerHTML = urlParams.get('msg');
-    }
-  </script>
-</body>
-
+    <script>
+      window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById("msg").innerHTML = urlParams.get("msg");
+      };
+    </script>
+  </body>
 </html>

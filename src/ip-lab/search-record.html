@@ -1,22 +1,20 @@
 <html>
   <head>
-    <title>Login page</title>
+    <title>Search record</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/form.css" />
   </head>
 
   <body>
     <div>
-      <h2 class="text-center sec">Admin Login</h2>
+      <h2 class="text-center sec">Search record</h2>
+
       <main class="main-body">
         <div class="content">
-          <form action="/ip-lab/api/login" method="post">
+          <form action="/ip-lab/api/search-record" method="post">
             <fieldset>
-              <label for="username">Enter your username:</label><br />
-              <input required type="text" name="username" id="username" />
-              <br />
-              <label for="password">Enter your password:</label><br />
-              <input required type="password" name="password" id="password" />
+              <label for="id">Enter the ID:</label><br />
+              <input required type="number" name="id" id="id" />
               <br />
               <input type="submit" value="Submit" />
               <input type="reset" value="Clear" />

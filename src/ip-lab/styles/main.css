@@ -9,7 +9,7 @@
 body {
   background-color: var(--dark);
   color: var(--white);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 26px;
 }
@@ -32,7 +32,8 @@ body > div {
   color: var(--tertiary);
 }
 
-.text-center, nav {
+.text-center,
+nav {
   text-align: center;
 }
 
@@ -64,7 +65,7 @@ nav {
 }
 
 .nav-list {
-  display: none;	
+  display: none;
 }
 
 nav:hover > div > div.nav-list {
