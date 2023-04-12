@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Login page</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/form.css" />
+</head>
+
+<body>
+    <div>
+        <h2 class="text-center sec">Login</h2>
+        <main class="main-body">
+            <div class="content">
+                <form action="/ip-lab/api/signup" method="post">
+                    <fieldset>
+                        <label for="username">Enter username:</label><br />
+                        <input required type="text" name="username" id="username" />
+                        <br />
+                        <label for="password">Enter password:</label><br />
+                        <input required type="password" name="password" id="password" />
+                        <br />
+                        <label for="dob">Enter dob:</label><br />
+                        <input required type="date" name="dob" id="dob" />
+                        <br />
+                        <label for="Gender">Enter gender:</label><br />
+                        <input type="radio" id="m" name="gender" value="M" />
+                        <label for="m">Male</label><br />
+                        <input type="radio" id="f" name="gender" value="F" />
+                        <label for="f">Female</label><br />
+                        <br />
+                        <label for="about">Enter something about you:</label><br />
+                        <input required type="text" name="about" id="about" />
+                        <br />
+                        <input type="submit" value="Signup" />
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
