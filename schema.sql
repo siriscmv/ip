@@ -1,6 +1,6 @@
 CREATE TABLE countries (
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
 );
 
 INSERT INTO countries (name) VALUES ('Afghanistan');
