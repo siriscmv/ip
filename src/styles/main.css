@@ -1,0 +1,166 @@
+:root {
+    --dark: #293241;
+    --secondary: #ee6c4d;
+    --tertiary: #3d5a80;
+    --light: #98c1d9;
+    --white: #e0fbfc;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+body>div {
+    padding: 8px;
+    margin: 8px;
+}
+
+#logo {
+    vertical-align: middle;
+    animation: 1s ease-out 0s slideX;
+}
+
+.sec {
+    color: var(--secondary);
+}
+
+.ter {
+    color: var(--tertiary);
+}
+
+.text-center,
+nav {
+    text-align: center;
+}
+
+.gap {
+    height: 100px;
+    min-height: 100px;
+}
+
+a {
+    font-size: 18px;
+    padding: 2px;
+    margin: 2px;
+    color: var(--tertiary);
+}
+
+a:visited {
+    color: var(--tertiary);
+}
+
+p {
+    font-size: 16px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 16px;
+}
+
+.nav-list {
+    display: none;
+}
+
+nav:hover>div>div.nav-list {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--light);
+    border-radius: 12px;
+}
+
+.nav-list>a {
+    padding: 8px;
+    margin: 8px;
+    border-radius: 12px;
+}
+
+.nav-list>a:hover {
+    background-color: var(--secondary);
+}
+
+.main-body {
+    padding: 16px;
+    margin: 16px;
+    border-radius: 16px;
+    font-size: 22px;
+    line-height: 32px;
+}
+
+.big-text {
+    font-size: 32px;
+    line-height: 42px;
+}
+
+.content {
+    font-size: 18px;
+    margin-top: 16px;
+    animation: 1s ease-out 0s slideY;
+}
+
+.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 256px;
+}
+
+.gallery:hover {
+    border: 1px solid #777;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    width: 100%;
+}
+
+footer {
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: var(--light);
+    color: var(--dark);
+    font-size: 14px;
+    line-height: 24px;
+}
+
+@keyframes slideY {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideX {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
