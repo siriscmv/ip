@@ -18,7 +18,7 @@ const data = [
 
 const printDB = async () => {
     const search = await db.collection(dbName).find().toArray();
-    console.log(`Current database: ${search.map((x) => `${x._id} --> ${x.name}`)}\n`);
+    console.log(`Current database: ${search.map((x) => `(${x._id})${x.name}`)}\n`);
 }
 
 const inserted = await db.collection(dbName).insertMany(data);
@@ -34,7 +34,10 @@ console.log(`Updated ${updated.modifiedCount} documents!`);
 await printDB()
 
 const search = await db.collection(dbName).find({age: {$gt: 18}}).toArray();
-console.log(`Adults -> ${search.map(x => x.name)}`)
+console.log(`Documents with 'age' over 18:`);
+for (const res of search) {
+    console.log(`ID:${res._id} Name:${res.name} Age:${res.age} Gender:${res.gender} Address:${res.address} Married?:${res.marital_status} DOV:${res.date_of_visit}`);
+}
 
 console.log('Exiting...')
 process.exit(0);
@@ -44,14 +47,16 @@ Connected and created database!
 Created collection!
 
 Inserted 4 documents!
-Current database: 1 --> abc,2 --> xyz,3 --> def,4 --> lmn
+Current database: (1)abc,(2)xyz,(3)def,(4)lmn
 
 Deleted 1 documents!
-Current database: 1 --> abc,2 --> xyz,4 --> lmn
+Current database: (1)abc,(2)xyz,(4)lmn
 
 Updated 1 documents!
-Current database: 1 --> abc,2 --> pqr,4 --> lmn
+Current database: (1)abc,(2)pqr,(4)lmn
 
-Adults -> pqr,lmn
+Documents with 'age' over 18:
+ID:2 Name:pqr Age:20 Gender:F Address:China Married?:true DOV:2021-06-02
+ID:4 Name:lmn Age:33 Gender:F Address:UK Married?:true DOV:2021-04-04
 Exiting...
 */
