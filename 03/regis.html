@@ -1,0 +1,377 @@
+<html>
+
+<head>
+  <title>Int Conference</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    input[type=text],
+    input[type=email],
+    input[type=datalist],
+    input[type=date],
+    input[type=password],
+    textarea {
+      background-color: var(--white);
+      border: 4px solid var(--white);
+      border-radius: 4px;
+      padding: 6px;
+      margin: 6px;
+    }
+
+    input[type=text]:focus,
+    input[type=email]:focus,
+    input[type=datalist]:focus,
+    input[type=date]:focus,
+    input[type=password]:focus,
+    textarea:focus {
+      background-color: var(--white);
+      border: 4px solid var(--secondary);
+      border-radius: 4px;
+      padding: 6px;
+      margin: 6px;
+    }
+
+    input[type=submit],
+    input[type=reset],
+    input[type=file] {
+      background-color: var(--secondary);
+      border: 4px solid var(--secondary);
+      border-radius: 4px;
+      padding: 6px;
+      margin: 6px;
+      color: var(--white);
+
+    }
+
+    input[type=submit]:hover,
+    input[type=reset]:hover {
+      background-color: var(--white);
+      border: 4px solid var(--secondary);
+      border-radius: 4px;
+      padding: 6px;
+      margin: 6px;
+      color: var(--secondary);
+      cursor: pointer;
+    }
+
+    .form-field-parent {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <img width="48px" height="48px" id="logo" src="media/logo.png" />
+    <div>
+      <div class="big-text sec">Navigate</div>
+      <div class="nav-list">
+        <a target="_blank" title="Home" href="home.html">Home</a>
+        <a target="_blank" title="Committee" href="com.html">Committee</a>
+        <a target="_blank" title="Call for Papers" href="cop.html">Call for Papers</a>
+        <a target="_blank" title="Important Dates" href="impdates.html">Important Dates</a>
+        <a target="_blank" title="Workshops" href="work.html">Workshops</a>
+        <a target="_blank" title="Registration" href="regis.html">Registration</a>
+        <a target="_blank" title="Contact" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <br />
+  <hr />
+  <hr />
+  <div>
+    <h2 class="text-center sec">Registration</h2>
+
+    <main class="main-body">
+      <span class="big-text">Register as a student/teacher in the form below:</span>
+      <br>
+      <span>Use enter key to go to the next field</span>
+      <div class="content">
+        <form>
+          <fieldset>
+            <label for="salutations">Salutations</label><br />
+            <input type="radio" id="mr" name="salutations" value="mr" />
+            <label for="mr">Mr</label>
+            <input type="radio" id="miss" name="salutations" value="miss" />
+            <label for="miss">Miss</label>
+            <input type="radio" id="mrs" name="salutations" value="mrs" />
+            <label for="mrs">Mrs</label>
+            <input type="radio" id="dr" name="salutations" value="dr" />
+            <label for="dr">Dr</label><br />
+
+            <label for="name">Enter your name:</label><br />
+            <div class="form-field-parent">
+              <input autocomplete required type="text" id="name" name="name" />
+              <span id="namehelper"></span>
+            </div>
+
+            <label for="username">Enter your username:</label><br />
+            <div class="form-field-parent">
+              <input autocomplete required type="datalist" list="usernames" name="username" id="username">
+              <span id="usernamehelper"></span>
+            </div>
+
+            <datalist id="usernames">
+              <option value="shipwreckconstant">
+              <option value="rotantique">
+              <option value="witnesssnowboard">
+              <option value="scoopwan">
+              <option value="myrrhout">
+              <option value="ebayclassroom">
+              <option value="buoyantspectacle">
+              <option value="artichokecinnamon">
+              <option value="gyrussympathy">
+              <option value="barberryclient">
+              <option value="employfence">
+              <option value="sleighinvent">
+              <option value="vehicledna">
+              <option value="witchillogical">
+              <option value="dangocupid">
+              <option value="stakingturtleneck">
+              <option value="scandaljellied">
+              <option value="crankygrinning">
+              <option value="actuallyperfectly">
+              <option value="reallytranslate">
+              <option value="cutknee">
+              <option value="burystock">
+              <option value="glidebetrayed">
+              <option value="voluminouswatchful">
+              <option value="fairwisdom">
+              <option value="muffincomedy">
+              <option value="biscayobedient">
+              <option value="despairingheartpulse">
+              <option value="holeexcitement">
+              <option value="arisepumped">
+              <option value="vinespirit">
+              <option value="tropicalwindbound">
+              <option value="defiantplastic">
+              <option value="saviorblackening">
+              <option value="underageconsensus">
+              <option value="sowsevegan">
+              <option value="professglowstone">
+              <option value="ersttreble">
+              <option value="visitits">
+              <option value="cheeryregulate">
+              <option value="populationjibe">
+              <option value="shellcurve">
+              <option value="frybreaddispenser">
+              <option value="doubtprofuse">
+              <option value="stablefire">
+              <option value="eagerfrigid">
+              <option value="choughcampus">
+              <option value="cocktailbam">
+              <option value="twangimmigrate">
+              <option value="porscheguarded">
+              <option value="scootmangoes">
+              <option value="listbrother">
+              <option value="unwittingportray">
+              <option value="dugwren">
+              <option value="satisfiedsane">
+              <option value="properapply">
+              <option value="bloatedhearty">
+              <option value="heelssociable">
+              <option value="lollipopbabble">
+              <option value="wherephew">
+              <option value="blackberrieswhose">
+              <option value="humorouscourteous">
+              <option value="amazinganchovies">
+              <option value="batterpaella">
+              <option value="packjoystick">
+              <option value="uptighthonky">
+              <option value="veximmodest">
+              <option value="sinremind">
+              <option value="jowlliving">
+              <option value="foretellparrot">
+              <option value="mulleinbobolink">
+              <option value="saveaccept">
+              <option value="unkemptbento">
+              <option value="trafalgarmacaw">
+              <option value="tensiongentleman">
+              <option value="wickedstatement">
+              <option value="nautilusraid">
+              <option value="alarmingsurprising">
+              <option value="obviouslyguffaw">
+              <option value="solidanimal">
+              <option value="meetingidle">
+              <option value="fatherhot">
+              <option value="whistleassociate">
+              <option value="stupendousgift">
+              <option value="beltfizzle">
+              <option value="entertaintrite">
+              <option value="beltedoyster">
+              <option value="sufferchant">
+              <option value="splashabiding">
+              <option value="candlelightemployer">
+              <option value="protectionspirited">
+              <option value="illegalphalanx">
+              <option value="biathlonnoun">
+              <option value="untidytraveler">
+              <option value="tannenbaumharass">
+              <option value="relativelyepisode">
+              <option value="resolutionlutestring">
+              <option value="polecatsversed">
+              <option value="heathpeppery">
+              <option value="shroomlightfencing">
+              <option value="tubesubmissive">
+              <option value="knockbackaberrant">
+              <option value="whilehiss">
+              <option value="riptideprinciple">
+              <option value="cloverwild">
+              <option value="encounterfavorable">
+              <option value="lightscontainer">
+              <option value="sensescore">
+              <option value="chamomileneighborly">
+              <option value="shadesmethodical">
+              <option value="peasslimy">
+              <option value="disciplinepartly">
+              <option value="timelypumpkins">
+              <option value="revenuetights">
+              <option value="hilltactful">
+              <option value="grilledpine">
+              <option value="faeroesweakness">
+              <option value="shockedensign">
+              <option value="belllie">
+              <option value="argumentaroused">
+              <option value="abjectshowers">
+              <option value="meiniesleuth">
+              <option value="clearlysheldrake">
+              <option value="dovesoverrated">
+              <option value="anarchistlinear">
+              <option value="feminineuniverse">
+              <option value="architecthouse">
+              <option value="grayreverse">
+              <option value="fibermuslin">
+              <option value="mediumgeocaching">
+              <option value="posteriorforelimb">
+              <option value="badlymassive">
+              <option value="starbolinspolecats">
+              <option value="preferagain">
+              <option value="leftclifden">
+              <option value="traumaticglum">
+              <option value="otherscrane">
+              <option value="rabbleoperation">
+              <option value="bloatshift">
+              <option value="mightyatom">
+              <option value="halibutenunciate">
+              <option value="ponchobefore">
+              <option value="dustrealtor">
+              <option value="religionhelm">
+              <option value="thiscajole">
+              <option value="ciderunadvised">
+              <option value="politesaid">
+              <option value="poorrevelation">
+              <option value="aortabiscuits">
+              <option value="musteringreed">
+              <option value="ruthlesspunishment">
+              <option value="mapflat">
+              <option value="makeupthundering">
+              <option value="headtasty">
+              <option value="moorhenprotective">
+              <option value="frankfurtermob">
+              <option value="writhelimitation">
+              <option value="erecttopsail">
+              <option value="groundeddavit">
+              <option value="gritsflink">
+              <option value="wrestlingoiled">
+              <option value="weaknesslever">
+              <option value="quotientmile">
+              <option value="butterflyshroomlight">
+              <option value="laganeggs">
+              <option value="beneficentangel">
+              <option value="multiplecaptain">
+              <option value="ampleshell">
+              <option value="seasonjoker">
+              <option value="hystericalfitzroy">
+              <option value="indeedcoalore">
+              <option value="leaderforecabin">
+              <option value="yikeslantern">
+              <option value="pestmoaning">
+              <option value="patheticspinnaker">
+              <option value="savoryblackstone">
+              <option value="levitateoik">
+              <option value="couldwoolens">
+              <option value="nikepampers">
+              <option value="thumbsdownroll">
+              <option value="ahemvanishing">
+              <option value="forcecorn">
+              <option value="soothegreet">
+              <option value="sproutsinterested">
+              <option value="harlotmarriage">
+              <option value="flintblow">
+              <option value="podiatristpoor">
+              <option value="phewluge">
+              <option value="feltwhy">
+              <option value="mayballoon">
+              <option value="wrotemeow">
+              <option value="squelchromaine">
+              <option value="clowdervenomous">
+              <option value="remindcompetent">
+              <option value="bigexuberant">
+              <option value="reservemisguided">
+              <option value="superbnike">
+              <option value="dewickavocet">
+              <option value="starbuckscondition">
+              <option value="fireplacecobblestone">
+            </datalist>
+          </fieldset>
+          <fieldset>
+            <label for="password">Enter your password:</label><br />
+            <div class="form-field-parent">
+              <input required type="password" id="password" name="password">
+              <span id="passwordhelper"></span>
+            </div>
+
+            <label for="email">Enter your email:</label><br />
+            <div class="form-field-parent">
+              <input autocomplete required type="email" id="email" name="email">
+              <span id="emailhelper"></span>
+            </div>
+          </fieldset>
+          <fieldset>
+            <label for="dob">Enter your DOB</label><br />
+
+            <div class="form-field-parent">
+              <input min="1950-01-01" max="2020-01-01" required type="date" id="dob" name="dob" />
+              <span id="dobhelper"></span>
+            </div>
+
+            <label for="photo">Upload your photo</label><br />
+            <input required type="file" accept=".png,.jpg,.jpeg,.gif,.webp" id="photo" name="photo" /><br />
+          </fieldset>
+          <fieldset>
+            <label for="langauges">Languages known</label><br />
+            <input type="checkbox" id="english" name="langauges" value="english">
+            <label for="english">English</label>
+            <input type="checkbox" id="tamil" name="langauges" value="tamil">
+            <label for="tamil">Tamil</label>
+            <input type="checkbox" id="french" name="langauges" value="french">
+            <label for="french">French</label>
+            <input type="checkbox" id="others" name="langauges" value="others">
+            <label for="others">Others</label>
+
+            <br><label for="expertise">Additional Expertise:</label><br>
+            <textarea placeholder="Enter your expertise here" id="expertise" name="expertise"></textarea>
+          </fieldset>
+          <fieldset>
+            <input id="submit" type="submit" value="Submit">
+            <input id="reset" type="reset" value="Clear">
+          </fieldset>
+        </form>
+      </div>
+  </div>
+  </div>
+
+  <script src="./scripts/regis.js"></script>
+
+</body>
+
+</html>

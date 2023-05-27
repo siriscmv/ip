@@ -1,0 +1,2 @@
+src/**/WEB-INF/classes/*.class
+mysql-db

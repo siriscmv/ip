@@ -1,0 +1,56 @@
+<web-app>
+   <servlet>
+      <servlet-name>Login</servlet-name>
+      <servlet-class>Login</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>Login</servlet-name>
+      <url-pattern>/api/login</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>ListRecords</servlet-name>
+      <servlet-class>ListRecords</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>ListRecords</servlet-name>
+      <url-pattern>/list-records</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>AddRecord</servlet-name>
+      <servlet-class>AddRecord</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>AddRecord</servlet-name>
+      <url-pattern>/api/add-record</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>DeleteRecord</servlet-name>
+      <servlet-class>DeleteRecord</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>DeleteRecord</servlet-name>
+      <url-pattern>/api/delete-record</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>SearchRecord</servlet-name>
+      <servlet-class>SearchRecord</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>SearchRecord</servlet-name>
+      <url-pattern>/api/search-record</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+      <servlet-name>UpdateRecord</servlet-name>
+      <servlet-class>UpdateRecord</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>UpdateRecord</servlet-name>
+      <url-pattern>/api/update-record</url-pattern>
+   </servlet-mapping>
+   
+</web-app>
